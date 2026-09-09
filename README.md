@@ -44,9 +44,9 @@ A browser-based console for a Polisy or eisy running IoX.
 
 ## Back your controller up first
 
-This writes to real hardware, and some mistakes cannot be undone through the
-API. Take a backup with whichever tool you already use, and keep the file
-somewhere other than the box. There is no warranty of any kind.
+Use whichever tool you already do, and keep the file somewhere other than the
+box. It has been tested against real hardware without incident, but no amount
+of testing covers every setup. There is no warranty of any kind.
 
 ## Download
 
@@ -57,7 +57,7 @@ if there is none, https://nodejs.org or `brew install node`.
 
 ## Running it
 
-Unzip anywhere and open the file inside:
+Expand it anywhere and open the file inside:
 
     Windows   Web Console for Universal Devices IoX.bat
     macOS     Web Console for Universal Devices IoX.command
@@ -68,8 +68,36 @@ in. It stops on its own about a second after you close the last page.
 **Windows** may show "Windows protected your PC" the first time. Choose More
 info, then Run anyway.
 
-**macOS** may refuse to open the .command the first time. Right-click it and
-choose Open.
+**macOS** will not run software whose developer it cannot check, and this is not
+signed. The first time, double-click it and press Done at the refusal, then open
+System Settings, go to Privacy & Security, scroll to the message naming the file
+and press Open Anyway. Double-click it again and it opens.
+
+## Install it on the controller
+
+It can copy itself into `/USER/WEB/iox` on the controller, so you can use it
+from any browser on your network with nothing running on a computer. The button
+is in the Status window, under "On the device".
+
+Afterwards it is at `http://<your-controller>:8080/USER/WEB/iox/index.htm`.
+
+What to know first:
+
+- Tested on a Polisy. It is not offered on other models; setting
+  `IOX_INSTALL_ANY=1` overrides that, and then you are the first to find out
+  whether it works.
+- Status is polled every two seconds rather than arriving live: there is no
+  event stream a browser can read from the controller. Commands are still sent
+  immediately and status refreshes straight after one, but it feels a beat
+  behind, and progress during a long operation such as adding a device is not
+  shown as it happens.
+- Nothing outside `/USER/WEB/iox` is written, and every file is read back and
+  compared byte for byte after it is written.
+- The controller serves those files with an hour of cache, so hard-reload the
+  page after installing or updating or you may see the previous copy.
+- Removing it deletes the files it installed and leaves the empty folder.
+- The installed copy cannot install, update or remove itself, and cannot
+  rebuild the Z-Wave or product-name tables. Run the downloaded copy for those.
 
 ## Not a Universal Devices product
 
@@ -91,4 +119,4 @@ MIT licences, each carrying its notice beside the file it covers.
 
 ---
 
-Current build: `2026-09-08 05:44  7f9f611`
+Current build: `2026-09-08 09:00  20060bd`

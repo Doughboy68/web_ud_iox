@@ -1,6 +1,6 @@
-Build 2026-09-08 05:44  7f9f611
+Build 2026-09-08 09:00  20060bd
 
-Unzip anywhere and open the file inside:
+Expand it anywhere and open the file inside:
 
     Windows   Web Console for Universal Devices IoX.bat
     macOS     Web Console for Universal Devices IoX.command
@@ -11,24 +11,28 @@ needs; macOS uses the Node already on the Mac.
 FIRST RUN
 
 Windows may show "Windows protected your PC". Choose More info, then Run anyway.
-macOS may refuse to open the .command. Right-click it and choose Open.
+macOS will not run software whose developer it cannot check, and this is not
+signed. Double-click it, press Done at the refusal, then open System Settings,
+go to Privacy & Security, scroll to the message naming the file and press Open
+Anyway. Double-click it again and it opens.
 
 BACK YOUR CONTROLLER UP FIRST
 
-This writes to real hardware and some mistakes cannot be undone through the API.
-There is no warranty of any kind.
+Use whichever tool you already do, and keep the file somewhere other than the
+box. It has been tested against real hardware without incident, but no amount
+of testing covers every setup. There is no warranty of any kind.
 
 FILES
 
 Windows
-  web-console-win.20260907-224438.zip
+  web-console-win.20260908-020059.zip
   35.0 MB
-  SHA-256  4a28032f2966067bfd1ef0b434f0009589397dcb522eea4c3124e0bfcc477665
+  SHA-256  17ba07ff800219602df3647c693b53f4c3f9c93779c7a6af1e12fb7d37d7d955
 
 macOS
-  web-console-mac.20260907-224438.zip
+  web-console-mac.20260908-020059.tar.gz
   1.0 MB
-  SHA-256  52a5e322f87859ce1ead94a5de890a774118dec297d0985b363f7dfcb28019db
+  SHA-256  891fc965c969acbcfcf24718efdf93772e626f82e753ca99017dd7151fe55456
 
 A third-party companion tool. Not affiliated with, endorsed by, or sponsored by
 Universal Devices, Inc. PolyForm Strict 1.0.0; see LICENSE inside the download.
